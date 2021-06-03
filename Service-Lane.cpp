@@ -2,7 +2,7 @@ vector<int> serviceLane(int n, vector<vector<int>> cases, vector<int> width)
 {
    vector<int> result;
     
-    for (int i = 0; i < cases.size(); ++i)
+    for (size_t i = 0; i < cases.size(); ++i)
     {
         int min = INT_MAX;
         int start = cases[i][0];
@@ -26,7 +26,7 @@ vector<int> serviceLane1(int n, vector<vector<int>> cases, vector<int> width)
 {
    vector<int> result;
     
-    for (int i = 0; i < cases.size(); ++i)
+    for (size_t i = 0; i < cases.size(); ++i)
     {
         int start = cases[i][0];
         int end = cases[i][1];
