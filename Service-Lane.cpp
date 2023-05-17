@@ -23,6 +23,7 @@ vector<int> serviceLane(int n, vector<vector<int>> cases, vector<int> width)
 }
 
 vector<int> serviceLane1(int n, vector<vector<int>> cases, vector<int> width)
+//vector<int> serviceLane(int n, vector<vector<int>> cases)
 {
     vector<int> result;
     
@@ -31,9 +32,10 @@ vector<int> serviceLane1(int n, vector<vector<int>> cases, vector<int> width)
         int start = cases[i][0];
         int end = cases[i][1];
         
-        result.emplace_back(
-            *min_element(width.begin()+start, width.end()-width.size()+end+1));       
+        //result.emplace_back(*min_element(width.begin()+start, width.end()-width.size()+end+1));       
+        result.emplace_back(*min_element(width.begin()+start, width.begin()+end+1)); 
     }
     
     return result;
 }
+
