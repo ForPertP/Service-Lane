@@ -28,6 +28,14 @@ class Result
     {
         List<int> result = new List<int>();
 
+        for (int i = 0; i < cases.Count; i++)
+        {
+            int start = cases[i][0];
+            int end = cases[i][1];
+
+            result.Add(width.GetRange(start, end - start + 1).Min());
+        }
+
         return result;
     }
 
@@ -54,7 +62,7 @@ class Solution
             cases.Add(Console.ReadLine().TrimEnd().Split(' ').ToList().Select(casesTemp => Convert.ToInt32(casesTemp)).ToList());
         }
 
-        List<int> result = Result.serviceLane(n, cases);
+        List<int> result = Result.serviceLane(n, cases, width);
 
         textWriter.WriteLine(String.Join("\n", result));
 
@@ -62,4 +70,3 @@ class Solution
         textWriter.Close();
     }
 }
-
