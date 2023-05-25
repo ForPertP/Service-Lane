@@ -23,9 +23,19 @@ class Result {
 
     public static List<Integer> serviceLane(int n, List<List<Integer>> cases, List<Integer> width) {
     // Write your code here
-    }
-}
+        List<Integer> result = new ArrayList<>();
 
+        for (int i = 0; i < cases.size(); i++) {
+            int start = cases.get(i).get(0);
+            int end = cases.get(i).get(1);
+
+            result.add(width.subList(start, end + 1).stream().min(Integer::compareTo).orElse(0));
+        }
+
+        return result;
+    }
+
+}
 
 public class Solution {
     public static void main(String[] args) throws IOException {
@@ -69,4 +79,3 @@ public class Solution {
         bufferedWriter.close();
     }
 }
-
